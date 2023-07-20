@@ -19,8 +19,10 @@ package com.example.exercisesamplecompose.di
 import android.content.Context
 import androidx.health.services.client.HealthServices
 import androidx.health.services.client.HealthServicesClient
+import com.example.exercisecompose.common.util.exerciseDataLayerRegistry
 import com.example.exercisesamplecompose.service.AndroidLogExerciseLogger
 import com.example.exercisesamplecompose.service.ExerciseLogger
+import com.google.android.horologist.data.WearDataLayerRegistry
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -51,4 +53,11 @@ class MainModule {
     @Singleton
     @Provides
     fun provideLogger(): ExerciseLogger = AndroidLogExerciseLogger()
+
+    @Singleton
+    @Provides
+    fun provideRegistry(
+        @ApplicationContext context: Context,
+        scope: CoroutineScope
+    ): WearDataLayerRegistry = context.exerciseDataLayerRegistry(scope)
 }

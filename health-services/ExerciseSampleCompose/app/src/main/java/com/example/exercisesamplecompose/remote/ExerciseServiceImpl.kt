@@ -29,7 +29,9 @@ class ExerciseServiceImpl(val monitor: ExerciseServiceMonitor): ExerciseServiceG
         val state = monitor.exerciseServiceState.first()
 
         return exerciseStatus {
-            this.status = state.exerciseState?.toProto()
+            if (state.exerciseState != null) {
+                this.state = state.exerciseState.toProto()
+            }
         }
     }
 

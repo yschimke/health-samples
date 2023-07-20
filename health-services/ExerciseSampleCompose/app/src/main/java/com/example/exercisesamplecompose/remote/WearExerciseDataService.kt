@@ -16,14 +16,7 @@
 
 package com.example.exercisesamplecompose.remote
 
-import androidx.datastore.core.DataStore
-import androidx.lifecycle.lifecycleScope
-import com.example.exercisecompose.exercise.proto.ExerciseProto.ExerciseStatus
 import com.example.exercisecompose.exercise.proto.ExerciseServiceGrpcKt
-import com.google.android.horologist.auth.sample.shared.datalayer.CounterValueSerializer
-import com.google.android.horologist.auth.sample.shared.grpc.CounterServiceGrpcKt
-import com.google.android.horologist.auth.sample.shared.grpc.GrpcDemoProto.CounterValue
-import com.google.android.horologist.data.ProtoDataStoreHelper.protoDataStore
 import com.google.android.horologist.data.WearDataLayerRegistry
 import com.google.android.horologist.datalayer.grpc.server.BaseGrpcDataService
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,11 +31,7 @@ class WearExerciseDataService : BaseGrpcDataService<ExerciseServiceGrpcKt.Exerci
     @Inject
     lateinit var service: Provider<ExerciseServiceImpl>
 
-    private val dataStore: DataStore<ExerciseStatus> by lazy {
-        registry.protoDataStore<ExerciseStatus>(lifecycleScope)
-    }
-
     override fun buildService(): ExerciseServiceGrpcKt.ExerciseServiceCoroutineImplBase {
-        return CounterService(dataStore)
+        return service.get()
     }
 }

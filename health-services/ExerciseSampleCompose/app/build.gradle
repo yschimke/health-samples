@@ -58,8 +58,9 @@ android {
   packagingOptions {
 //    pickFirst 'data.proto'
     resources {
-      excludes += "/META-INF/{AL2.0,LGPL2.1}"
-
+      exclude "/META-INF/{AL2.0,LGPL2.1}"
+      exclude 'google/protobuf/*.proto'
+      exclude '**/*.proto'
     }
   }
   namespace 'com.example.exercisesamplecompose'

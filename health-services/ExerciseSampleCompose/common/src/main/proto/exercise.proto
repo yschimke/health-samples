@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-syntax = "proto3";
+syntax = "proto2";
 
 package com.example.exercisecompose.exercise.proto;
 
@@ -28,7 +28,7 @@ option java_package = "com.example.exercisecompose.exercise.proto";
 option java_outer_classname = "ExerciseProto";
 
 message ExerciseConfig {
-  .androidx.health.services.client.proto.ExerciseConfig config = 1;
+  required .androidx.health.services.client.proto.ExerciseConfig config = 1;
 }
 
 message ExerciseReference {
@@ -42,13 +42,14 @@ enum Action {
 }
 
 message ExerciseAction {
-  ExerciseReference exercise = 1;
-  Action action = 2;
+  optional ExerciseReference exercise = 1;
+  required Action action = 2;
 }
 
 message ExerciseStatus {
-  optional .androidx.health.services.client.proto.ExerciseUpdate status = 1;
-  .google.protobuf.Timestamp timestamp = 2;
+  optional .androidx.health.services.client.proto.ExerciseState state = 1;
+  optional .androidx.health.services.client.proto.ExerciseUpdate lastUpdate = 2;
+  optional .google.protobuf.Timestamp timestamp = 3;
 }
 
 service ExerciseService {

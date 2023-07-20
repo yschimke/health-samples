@@ -62,7 +62,7 @@
             android:foregroundServiceType="location" />
 
         <service
-            android:name=".remote.ExerciseServiceImpl"
+            android:name=".remote.WearExerciseDataService"
             android:exported="true"
             >
             <intent-filter>
