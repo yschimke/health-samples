@@ -4,11 +4,20 @@ androidx-activity = "1.7.2"
 androidx-compose = "1.5.0-beta02"
 androidx-lifecycle = "2.6.1"
 androidx-wear-compose = "1.2.0-beta02"
+core-ktx = "1.10.1"
 core-splashscreen = "1.0.1"
 dagger = "2.46.1"
+datastore = "1.1.0-alpha04"
+grpc-android = "1.55.1"
+grpc-kotlin-stub = "1.3.0"
 health-services = "1.0.0-beta03"
 horologist = "0.4.9"
+horologist-datalayer = "0.4.12"
+kotlinx-coroutines-play-services = "1.7.2"
 org-jetbrains-kotlin = "1.8.21"
+org-jetbrains-kotlin-jvm = "1.8.21"
+play-services-wearable = "18.0.0"
+protobuf-kotlin-lite = "3.23.4"
 
 [libraries]
 android-lint-gradle = "com.android.tools.lint:lint-gradle:31.0.2"
@@ -17,7 +26,9 @@ androidx-compose-navigation = "androidx.navigation:navigation-compose:2.6.0"
 androidx-compose-runtime = "androidx.compose.runtime:runtime:1.4.3"
 androidx-compose-ui-tooling = { module = "androidx.wear.compose:compose-ui-tooling", version.ref = "androidx-wear-compose" }
 androidx-concurrent = "androidx.concurrent:concurrent-futures-ktx:1.1.0"
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "core-splashscreen" }
+androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "datastore" }
 androidx-health-services = { module = "androidx.health:health-services-client", version.ref = "health-services" }
 androidx-lifecycle-common-java8 = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "androidx-lifecycle"}
 androidx-lifecycle-extensions  = "androidx.lifecycle:lifecycle-extensions:2.2.0"
@@ -34,13 +45,22 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 compose-wear-navigation = "androidx.wear.compose:compose-navigation:1.2.0-beta02"
 dagger-hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "dagger"}
 dagger-hilt-android-compiler = {module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger"}
+grpc-android = { module = "io.grpc:grpc-android", version.ref = "grpc-android" }
+grpc-binder = { module = "io.grpc:grpc-binder", version.ref = "grpc-android" }
+grpc-kotlin-stub = { module = "io.grpc:grpc-kotlin-stub", version.ref = "grpc-kotlin-stub" }
+grpc-protobuf-lite = { module = "io.grpc:grpc-protobuf-lite", version.ref = "grpc-android" }
+grpc-stub = { module = "io.grpc:grpc-stub", version.ref = "grpc-android" }
 guava = "com.google.guava:guava:32.0.1-android"
 hilt-navigation-compose = "androidx.hilt:hilt-navigation-compose:1.0.0"
 horologist-compose-layout = { module = "com.google.android.horologist:horologist-compose-layout", version.ref = "horologist" }
 horologist-compose-material = { module = "com.google.android.horologist:horologist-compose-material", version.ref = "horologist" }
+horologist-datalayer = { module = "com.google.android.horologist:horologist-datalayer", version.ref = "horologist-datalayer" }
 horologist-health-composables = { module = "com.google.android.horologist:horologist-health-composables", version.ref = "horologist" }
 jacoco-ant = "org.jacoco:org.jacoco.ant:0.8.8"
 junit = "junit:junit:4.13.2"
+kotlinx-coroutines-play-services = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "kotlinx-coroutines-play-services" }
+play-services-wearable = { module = "com.google.android.gms:play-services-wearable", version.ref = "play-services-wearable" }
+protobuf-kotlin-lite = { module = "com.google.protobuf:protobuf-kotlin-lite", version.ref = "protobuf-kotlin-lite" }
 test-espresso-core = "androidx.test.espresso:espresso-core:3.5.1"
 test-ext-junit = "androidx.test.ext:junit:1.1.5"
 wear-compose-foundation = { module = "androidx.wear.compose:compose-foundation", version.ref = "androidx-wear-compose" }
@@ -52,5 +72,6 @@ wear-ongoing-activity = "androidx.wear:wear-ongoing:1.0.0"
 com-android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "dagger"}
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin" }
+org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }
 
 
