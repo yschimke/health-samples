@@ -47,7 +47,9 @@
         <activity
             android:name="com.example.exercisesamplecompose.app.MainActivity"
             android:exported="true"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:taskAffinity=".main"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -58,5 +60,19 @@
             android:name=".service.ExerciseService"
             android:exported="false"
             android:foregroundServiceType="location" />
+
+        <service
+            android:name=".remote.ExerciseServiceImpl"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.REQUEST_RECEIVED" />
+                <data
+                    android:host="*"
+                    android:pathPrefix="/grpc/exercise"
+                    android:scheme="wear"
+                    />
+            </intent-filter>
+        </service>
     </application>
 </manifest>
