@@ -80,6 +80,7 @@ dependencies {
     api libs.play.services.wearable
     implementation(libs.kotlinx.coroutines.play.services)
     implementation(libs.horologist.datalayer)
+    implementation(libs.horologist.datalayer.grpc)
     implementation libs.androidx.lifecycle.service
 }
 

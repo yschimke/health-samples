@@ -1,0 +1,68 @@
+plugins {
+    alias(libs.plugins.com.android.application)
+    alias(libs.plugins.org.jetbrains.kotlin.android)
+}
+
+android {
+    namespace 'com.example.exercisecompose'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.exercisecompose"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.majorVersion
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.4.8'
+    }
+    packagingOptions {
+        resources {
+            exclude '/META-INF/{AL2.0,LGPL2.1}'
+            exclude 'google/protobuf/*.proto'
+            exclude '**/*.proto'
+        }
+    }
+}
+
+dependencies {
+    implementation projects.common
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.lifecycle.runtime
+    implementation libs.androidx.activity.compose
+    implementation platform(libs.compose.bom)
+    implementation libs.ui
+    implementation libs.ui.graphics
+    implementation libs.compose.ui.tooling.preview
+    implementation libs.material3
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.horologist.datalayer)
+    implementation(libs.horologist.datalayer.grpc)
+    implementation(libs.kotlinx.coroutines.play.services)
+
+    testImplementation libs.junit.junit
+}
